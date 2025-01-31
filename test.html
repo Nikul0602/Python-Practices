@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SahiKhao</title>
+    <meta name="description" content="SahiKhao - Personalized nutrition, flexible diet, and skincare solutions for better health and wellness.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        .slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+
+        .slide-content {
+            flex: 1;
+            max-width: 50%;
+            padding-right: 20px;
+        }
+
+        .slide-content p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .slide-content .author {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .slide-content .location {
+            color: #777;
+        }
+
+        .slide-image {
+            flex: 1;
+            max-width: 50%;
+            text-align: center;
+        }
+
+        .slide-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .arrow {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        hr {
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.541);
+            border: none;
+        }
+
+        .why {
+        max-width: 700px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+         }
+
+          h1 {
+            font-size: 1.6rem;
+            margin: 0;
+          }
+
+          h1 .highlight {
+            color: #77aa33;
+            font-weight: bold;
+          }
+
+          h2 {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 10px 0;
+          }
+
+          .underline {
+            width: 100px;
+            height: 3px;
+            background: #77aa33;
+            margin: 10px auto;
+            border: none;
+          }
+
+          p {
+            color: #555;
+            line-height: 1.6;
+            margin: 10px 0;
+          }
+
+          ul.services-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 20px auto;
+          }
+
+          ul.services-list li {
+            color: #77aa33;
+            margin: 10px 0;
+            font-weight: bold;
+            position: relative;
+            padding-left: 20px;
+          }
+
+          ul.services-list li::before {
+            content: 'â';
+            position: absolute;
+            left: 0;
+            color: #77aa33;
+          }
+
+          .buttons {
+            margin-top: 20px;
+          }
+
+          .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none; /* Removes the underline */
+            color: inherit; /* Ensures it uses the parent color or your specified color */
+          }
+
+          .btn a {
+            text-decoration: none;
+            color: inherit;
+          }
+
+          .btn.primary {
+            background-color: #77aa33;
+            color: #fff;
+            margin-right: 10px;
+          }
+
+          .btn.secondary {
+            background-color: #fff;
+            color: #77aa33;
+            border: 2px solid #77aa33;
+          }
+
+          .btn:hover {
+            opacity: 0.9;
+          }
+
+        @media (max-width: 768px) {
+            .slide-content {
+                max-width: 100%;
+                padding-right: 0;
+            }
+
+            .slide {
+                flex-direction: column;
+            }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="logo">
+            <a href="index.html" class="active"><img src="logo.png" alt="SahiKhao"></a>
+        </div>
+        <!-- Hamburger Menu -->
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                 <li><a href="program.html">Our Program</a></li>
+                <li><a href="services.html">Services</a></li>
+                 <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home page top banner -->
+    <!--<section class="hero">-->
+    <!--    <div>-->
+    <!--        <h1>Don't Diet, Change Your Habits!</h1>-->
+    <!--        <p>Your journey to better health begins here.</p>-->
+    <!--    </div>-->
+    <!--</section><br><br>-->
+    <br>
+    <h1>
+        Welcome to <span class="highlight">SahiKhao</span>
+    </h1>
+    <br>
+    <p style="padding-left: 20px; padding-right: 20px;">At Sahikhao, we believe that the path to a healthier and happier life begins with the right food choices.<br>Our mission is to empower individuals to embrace a balanced and nutritious lifestyle by offering personalized guidance, actionable insights, and a wealth of resources tailored to their unique needs.<br>With a vision to make "right eating" accessible and sustainable for everyone, Sahikhao is here to transform your relationship with food and well-being.</p><br><hr><br>
+
+    <!-- Home page services -->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="container">
+            <div class="card">
+                <img src="personalized nutrition.png" alt="Balanced Nutrition">
+                <h3>Balanced Diet Plan</h3>
+                <p>Custom meal plans designed for your health and wellness.</p>
+            </div>
+            <div class="card">
+                <img src="flexible diet.webp" alt="Flexible Diet">
+                <h3>Flexible Diet</h3>
+                <p>Savor your favorite dishes while making strides toward your goals.</p>
+            </div>
+            <div class="card">
+                <img src="consultantion skincare.png" alt="Mindful Eating">
+                <h3>Daily Skin Care</h3>
+                <p>Reveal your healthiest and most radiant skin.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why to choose us -->
+    <div class="why">
+        <h2>Why choose us?</h2>
+        <hr class="underline" />
+        <p>
+          Sahi khao, Svasth Raho â Your online partner in live healthy.
+        </p>
+        <!-- <p> -->
+          <!-- <strong>Flexitarian</strong> or "Diet Flex" refers to a flexible approach to eating that is primarily plant-based but allows for occasional meat and animal products. This diet supports both physical health and environmental sustainability. -->
+        <!-- </p> -->
+        <!-- <p> -->
+          <!-- "Fuel your body, fuel your life" combined with a flexitarian diet means adopting a flexible eating pattern that prioritizes nutrition and vitality. This approach involves: -->
+        <!-- </p> -->
+        <ul class="services-list">
+          <li>Personalized Plans:</li><p> Tailored diets & nutrition to match your unique lifestyle and goals.</p>
+          <li> Guidance:</li> <p>Certified nutritionists to guide you every step of the way.</p>
+          <li>Sustainable Results:</li><p> Practical, long-term strategies for a healthier you.</p>
+          <li>Trusted Resources:</li> <p> Science-based recommendations you can rely on.</p>
+          <li>Holistic Approach:</li><p> Focused on overall wellness.</p>
+        </ul>
+        <div class="buttons">
+          <button class="btn primary"><a href="program.html">Know More</a></button>
+          <button class="btn secondary"><a href="contact.html">Consult Now</a></button>
+        </div>
+    </div>
+
+    <!-- Home page testimonials -->
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <div class="slide-content">
+                    <p><strong>Heveryone,</strong></p>
+                    <p>Mujhe kafi time se pimples or acne the jo mera self confidence low fill karta tha or maine eske liye khuch products use kiye the par pimples nahi ja rahe the phir mujhe sahikho. com ke madhyam se khuch tips mila or khuch products suggest kiye or phir khuch month me mere pimples or acne chale gaye thank you so much sahikho.</p>
+                    <p class="author">Prabhat Pal</p>
+                    <p class="location">VasaiVasai <hr></p>
+                </div>
+                <div class="slide-image">
+                    <img src="prabhat pal.jpg" alt="Testimonial Image">
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-content">
+                    <p><strong>Thank You So Much Sir,</strong></p>
+                    <p>For your valuable guidance regarding weight gain. I'm feeling very happy to gaining my wait. Once again thanks for recommending me such a wonderful results oriented diet & products really I'm very happy with that.ðð¤</p>
+                    <p class="author">Sunil saroj</p>
+                    <p class="location">Mumbai</p>
+                </div>
+                <div class="slide-image">
+                    <!-- <img src="#" alt="Testimonial Image"> -->
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-content">
+                    <p>I was overweight 79Kg.
+                        Due to that I was face issue laziness, discomfort so I contacted to Tanuk sir ..
+                        He suggested me some diet and products by which I loosed 9kg in 2month .
+                        Thank you so much sir.</p>
+                    <p class="author">Pritam Chand</p>
+                    <p class="location">Bhiwandi<hr></p>
+                </div><hr>
+                <div class="slide-image">
+                    <img src="pritam chand.jpeg" alt="Testimonial Image">
+                </div>
+            </div>
+
+             <!-- Add more slides here -->
+        </div>
+
+        <div class="arrows">
+            <button class="arrow prev">&#8592;</button>
+            <button class="arrow next">&#8594;</button>
+        </div>
+    </div>
+
+    <!-- Appointment form -->
+    <!--<div class="appointment">-->
+    <!--    <br>-->
+    <!--    <br>-->
+    <!--    <form class="appointment" action="" method="post" name="google-sheet">-->
+    <!--        <h2 class="appointment">Make an Appointment</h2>-->
+    <!--        <h4>First Name</h4>-->
+    <!--        <input type="text" name="first_name" placeholder="First Name" required>-->
+    <!--        <h4>Last Name</h4>-->
+    <!--        <input type="text" name="last_name" placeholder="Last Name" required>-->
+    <!--        <div class="gender-group">-->
+    <!--            <h4><label>Gender:</label></h4>-->
+    <!--            <input type="radio" id="male" name="gender" value="Male" required>-->
+    <!--            <label for="male">Male</label>-->
+    <!--            <input type="radio" id="female" name="gender" value="Female" required>-->
+    <!--            <label for="female">Female</label>-->
+    <!--            <input type="radio" id="other" name="gender" value="Other" required>-->
+    <!--            <label for="other">Other</label>-->
+    <!--        </div>-->
+    <!--        <input type="tel" name="phone" placeholder="Phone Number" required>-->
+    <!--        <input type="email" name="email" placeholder="Email" required>-->
+    <!--        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>-->
+    <!--        <button type="submit" name="submit">Submit Form</button>-->
+    <!--    </form>-->
+    <!--</div>-->
+        <!-- Java script -->
+        <script>
+            // const scriptURL = 'https://script.google.com/macros/s/AKfycby7318A6sT1z8EzjBTy3jtDiCrbRrFrkIBb7fsA7aRv3jqsHuyUwMC4aq3oeYWze4s_0A/exec';
+            // const form = document.forms['google-sheet'];
+
+            // form.addEventListener('submit', e => {
+            //     e.preventDefault(); // Prevent default form submission
+            //     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            //         .then(response => {
+            //             alert("Thanks for contacting us! We will get back to you soon.");
+            //             form.reset(); // Clear the form fields after successful submission
+            //         })
+            //         .catch(error => {
+            //             console.error('Error!', error.message);
+            //             alert("There was an error submitting the form. Please try again.");
+            //         });
+            });
+
+            // for testimonial slide on home page
+            const slides = document.querySelector('.slides');
+            const slide = document.querySelectorAll('.slide');
+            const prev = document.querySelector('.prev');
+            const next = document.querySelector('.next');
+
+            let index = 0;
+
+            function showSlide(i) {
+                index = (i + slide.length) % slide.length;
+                slides.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            prev.addEventListener('click', () => showSlide(index - 1));
+            next.addEventListener('click', () => showSlide(index + 1));
+
+            // Auto-slide
+            setInterval(() => showSlide(index + 1), 5000);
+        </script>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Connect Us Section -->
+            <div class="footer-section">
+                <h3 class="connect">Connect Us</h3>
+                <p><strong>Location:</strong> Mumbai</p>
+                <p><strong>Mail:</strong> <a href="mailto:support@sahikhao.com">support@sahikhao.com</a></p>
+                <p class="footer-detail"><strong>Contact:</strong> <a href="tel:7738920081">7738920081</a></p>
+                <p><strong>Time:</strong> Mon to Sat: 09:00am to 6:00pm</p>
+            </div>
+
+            <!-- Follow Us Section -->
+            <div class="footer-section">
+                <h3 class="follow">Follow Us</h3><br>
+                <div class="social-links">
+                    <a href="https://chat.whatsapp.com/BEQNdCBhWrxE1xjOaIYcW3">
+                        <img src="whatsapp logo.png" alt="whatsapp">
+                    </a>&ensp;
+                    <a href="https://www.instagram.com/sahikhao/profilecard/?igsh=aGcxaTBsbHV0bmJu">
+                        <img src="insta logo.png" alt="instagram">
+                    </a>&ensp;
+                    <a href="https://youtube.com/@sahikhao?si=WJWsdCrJB5gidmz1">
+                        <img src="youtube logo.png" alt="youtube">
+                    </a>&ensp;
+                    <a href="https://www.linkedin.com/in/tanuklal-kamal-sahu-655062217?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                        <img src="linkedin logo.png" alt="linkedin">
+                    </a>&ensp;
+                    <a href="https://www.facebook.com/share/19juCcFv8N/?mibextid=wwXIfr">
+                        <img src="facebook logo.png" alt="facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p>&copy; <span id="year"></span> All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl508431'},{'dcenter':'sg2'},{'cp_id':'10195351'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>
