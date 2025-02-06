@@ -3,10 +3,10 @@
 import os
 
 files = os.listdir()
-i = 1
+i = 20
 for file in files:
-    if file.endswith(".pdf"):
+    if file.endswith(".png"):
         print(file)
         os.rename(f"{file}", f"{i}.png")
-    i += 1
+    i = i + 1
 

@@ -15,13 +15,18 @@
 #     print(news.text)
 
 import requests
+import json
 
-url = ('https://newsapi.org/v2/everything?'
-       'q=Apple&'
-       'from=2025-01-31&'
-       'sortBy=popularity&'
-       'apiKey=0cae33c3b8d5459792202a235ddd83e2')
+query = input("What type of news you want to see?: ")
 
-response = requests.get(url)
+url = (f"https://newsapi.org/v2/everything?q={query}&from=2024-12-31&sortBy=publishedAt&apiKey"
+       f"=0cae33c3b8d5459792202a235ddd83e2")
 
-# print (response)
+r = requests.get(url)
+news = json.loads(r.text)
+# print(news, type(news))
+
+for article in news["articles"]:
+       print(article["title"])
+       print(article["description"])
+       print("---------------------------")
