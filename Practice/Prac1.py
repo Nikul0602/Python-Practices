@@ -1,7 +1,7 @@
 ## CREATING NORMAL CALCULATOR USING PRINT STATEMENT
 
-a = 6
-b = 4
+a = int(input("Enter First Number : "))
+b = int(input("Enter Second Number : "))
 
 print("The Addition for ",a,"+", b, "is: ", a + b)
 print("The Subtraction for ",a,"-", b, "is: ", a - b)

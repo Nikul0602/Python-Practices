@@ -3,34 +3,25 @@
 import random
 
 def check(computer, user):
+    if user>1:
+        print("You have to choose between -1, 0, 1")
+        return
+
     if computer==user :
-        return 0
+        print("you tie")
+        return
 
-    if computer==0 and user == 1:
-        return -1
+    if computer==0 and user == 1 or computer==1 and user == 0 or computer==2 and user == 1:
+        print("you loose")
+        return
 
-    if computer==1 and user == 0:
-        return -1
+    print("you win")
+    
+for i in range(5):
+    computer = random.randrange(0, 2)
+    user = int(input("Enter 0 for Snake, 1 for Water and -1 for Gun : "))
 
-    if computer==2 and user == 1:
-        return -1
-
-    return 1
-
-
-computer = random.randrange(0, 2)
-user = int(input("Enter 0 for Snake, 1 for Water and -1 for Gun"))
+    check(computer, user)
 
 
-score = check(computer, user)
-
-print(f"You: {user}"
-      f"Computer: {computer}")
-
-if score== 0:
-    print("Match is Draw")
-elif score == -1:
-    print("Sorry!, You Lose.")
-else:
-    print("Congratulations!, You Won.")
 

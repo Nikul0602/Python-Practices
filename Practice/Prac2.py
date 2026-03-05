@@ -11,9 +11,9 @@ print(h)
 # ts = time.strftime('%S')
 # print(ts)
 
-if (h>00 and h<12):
+if 00 < h < 12:
     print("Morning")
-elif (h>12 and h<18):
+elif 12 < h < 18:
     print("Afternoon")
 else:
     print("Good Night")
