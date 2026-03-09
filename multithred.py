@@ -7,7 +7,7 @@ from concurrent.futures.thread import ThreadPoolExecutor
 
 ## Indicates some task being done
 def func(seconds):
-    print(f"Sleeping for {seconds} seconds")
+    print(f"Sleeping for {seconds} seconds") 
     t.sleep(seconds)
 
 
